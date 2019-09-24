@@ -1,0 +1,14 @@
+/venv
+.env
+.idea
+aio.py
+aiohttp123.py
+asyncio121.py
+condition.py
+download.py
+download-coroutine.py
+foo.py
+split.py
+sync.py
+sync1.py
+yield.py

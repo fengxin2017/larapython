@@ -1,0 +1,57 @@
+#!/usr/bin/python3.7
+# -*- coding: UTF-8 -*-
+
+import os
+import sys
+
+sys.path.append('/larapy/venv/Lib/site-packages')
+
+from laravel.Illuminate.Helps.Help import *
+from app.Http.Kernel import Kernel
+
+
+def getKernelClosure(router):
+    def closure(app):
+        return Kernel(app, router)
+
+    return closure
+
+
+def bootApp():
+    application = Application(os.getcwd())
+
+    application.singleton('kernel', getKernelClosure(app('router')))
+
+    app('kernel').bootstrap()
+
+
+def main():
+    try:
+        if sys.argv[0] == 'artisan' and sys.argv[1] == 'queue:work':
+            bootApp()
+            try:
+                if sys.argv[2].startswith('-q='):
+                    queue = sys.argv[2].replace('-q=', '')
+                    print('working on queue:' + queue)
+                    app('worker').onQueue(queue).run()
+                else:
+                    print('invalid options')
+            except:
+                print('working on queue:default')
+                app('worker').onQueue('default').run()
+        else:
+            print('-------commands--------')
+            print('|artisan -v')
+            print('|artisan queue:work')
+            print('    |option -q= : The names of the queues to work.')
+            print('---------------------------')
+    except:
+        print('-------commands--------')
+        print('|artisan -v')
+        print('|artisan queue:work')
+        print('    |option -q= : The names of the queues to work.')
+        print('---------------------------')
+
+
+if __name__ == "__main__":
+    main()

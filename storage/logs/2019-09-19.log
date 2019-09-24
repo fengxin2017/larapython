@@ -1,0 +1,848 @@
+【TIME】  2019-09-19 16:56:14
+Traceback (most recent call last):
+  File "index.py", line 36, in handler
+    return await self.kernel.handle(request);
+  File "../laravel/Illuminate/Foundation/Http/Kernel.py", line 33, in handle
+    return await self.sendRequestThroughRouter(request)
+  File "../laravel/Illuminate/Foundation/Http/Kernel.py", line 45, in sendRequestThroughRouter
+    return await Pipeline(self.app).send(request).through(self.Middleware).then(self.dispatchToRouter())
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 21, in then
+    return await runer(self.passable)
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 32, in inner
+    return await self.app.make(pipe).handle(passable, stack)
+  File "../app/Http/Middleware/M1.py", line 7, in handle
+    return await next(request)
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 32, in inner
+    return await self.app.make(pipe).handle(passable, stack)
+  File "../app/Http/Middleware/M2.py", line 4, in handle
+    return await next(request)
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 32, in inner
+    return await self.app.make(pipe).handle(passable, stack)
+  File "../app/Http/Middleware/M3.py", line 4, in handle
+    return await next(request)
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 25, in closure
+    return await destination(passable)
+  File "../laravel/Illuminate/Foundation/Http/Kernel.py", line 49, in closure
+    return await self.router.dispatch(request)
+  File "../laravel/Illuminate/Routing/Router.py", line 22, in dispatch
+    return await self.dispatchToRoute(request)
+  File "../laravel/Illuminate/Routing/Router.py", line 25, in dispatchToRoute
+    return await self.runRoute(request, self.findRoute(request))
+  File "../laravel/Illuminate/Routing/Router.py", line 33, in runRoute
+    return await self.runRouteWithinStack(route, request)
+  File "../laravel/Illuminate/Routing/Router.py", line 43, in runRouteWithinStack
+    return await Pipeline(self.app).send(request).through(middleware).then(self.getRunClosure(route))
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 21, in then
+    return await runer(self.passable)
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 32, in inner
+    return await self.app.make(pipe).handle(passable, stack)
+  File "../app/Http/Middleware/M4.py", line 6, in handle
+    return await next(request)
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 25, in closure
+    return await destination(passable)
+  File "../laravel/Illuminate/Routing/Router.py", line 51, in closure
+    return await self.toResponse(request, await route.run(request))
+  File "../laravel/Illuminate/Routing/Route.py", line 30, in run
+    return await self.runController(request)
+  File "../laravel/Illuminate/Routing/Route.py", line 33, in runController
+    return await self.app.make('controllerDispatcher').dispatch(self, request)
+  File "../laravel/Illuminate/Routing/ControllerDispatcher.py", line 10, in dispatch
+    return await getattr(controller, action)(request)
+TypeError: object Response can't be used in 'await' expression
+
+
+【TIME】  2019-09-19 16:56:26
+Traceback (most recent call last):
+  File "index.py", line 36, in handler
+    return await self.kernel.handle(request);
+  File "../laravel/Illuminate/Foundation/Http/Kernel.py", line 33, in handle
+    return await self.sendRequestThroughRouter(request)
+  File "../laravel/Illuminate/Foundation/Http/Kernel.py", line 45, in sendRequestThroughRouter
+    return await Pipeline(self.app).send(request).through(self.Middleware).then(self.dispatchToRouter())
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 21, in then
+    return await runer(self.passable)
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 32, in inner
+    return await self.app.make(pipe).handle(passable, stack)
+  File "../app/Http/Middleware/M1.py", line 7, in handle
+    return await next(request)
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 32, in inner
+    return await self.app.make(pipe).handle(passable, stack)
+  File "../app/Http/Middleware/M2.py", line 4, in handle
+    return await next(request)
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 32, in inner
+    return await self.app.make(pipe).handle(passable, stack)
+  File "../app/Http/Middleware/M3.py", line 4, in handle
+    return await next(request)
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 25, in closure
+    return await destination(passable)
+  File "../laravel/Illuminate/Foundation/Http/Kernel.py", line 49, in closure
+    return await self.router.dispatch(request)
+  File "../laravel/Illuminate/Routing/Router.py", line 22, in dispatch
+    return await self.dispatchToRoute(request)
+  File "../laravel/Illuminate/Routing/Router.py", line 25, in dispatchToRoute
+    return await self.runRoute(request, self.findRoute(request))
+  File "../laravel/Illuminate/Routing/Router.py", line 33, in runRoute
+    return await self.runRouteWithinStack(route, request)
+  File "../laravel/Illuminate/Routing/Router.py", line 43, in runRouteWithinStack
+    return await Pipeline(self.app).send(request).through(middleware).then(self.getRunClosure(route))
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 21, in then
+    return await runer(self.passable)
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 32, in inner
+    return await self.app.make(pipe).handle(passable, stack)
+  File "../app/Http/Middleware/M4.py", line 6, in handle
+    return await next(request)
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 25, in closure
+    return await destination(passable)
+  File "../laravel/Illuminate/Routing/Router.py", line 51, in closure
+    return await self.toResponse(request, await route.run(request))
+  File "../laravel/Illuminate/Routing/Route.py", line 30, in run
+    return await self.runController(request)
+  File "../laravel/Illuminate/Routing/Route.py", line 33, in runController
+    return await self.app.make('controllerDispatcher').dispatch(self, request)
+  File "../laravel/Illuminate/Routing/ControllerDispatcher.py", line 10, in dispatch
+    return await getattr(controller, action)(request)
+TypeError: object Response can't be used in 'await' expression
+
+
+【TIME】  2019-09-19 16:58:41
+Traceback (most recent call last):
+  File "index.py", line 36, in handler
+    return await self.kernel.handle(request);
+  File "../laravel/Illuminate/Foundation/Http/Kernel.py", line 33, in handle
+    return await self.sendRequestThroughRouter(request)
+  File "../laravel/Illuminate/Foundation/Http/Kernel.py", line 45, in sendRequestThroughRouter
+    return await Pipeline(self.app).send(request).through(self.Middleware).then(self.dispatchToRouter())
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 21, in then
+    return await runer(self.passable)
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 32, in inner
+    return await self.app.make(pipe).handle(passable, stack)
+  File "../app/Http/Middleware/M1.py", line 7, in handle
+    return await next(request)
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 32, in inner
+    return await self.app.make(pipe).handle(passable, stack)
+  File "../app/Http/Middleware/M2.py", line 4, in handle
+    return await next(request)
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 32, in inner
+    return await self.app.make(pipe).handle(passable, stack)
+  File "../app/Http/Middleware/M3.py", line 4, in handle
+    return await next(request)
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 25, in closure
+    return await destination(passable)
+  File "../laravel/Illuminate/Foundation/Http/Kernel.py", line 49, in closure
+    return await self.router.dispatch(request)
+  File "../laravel/Illuminate/Routing/Router.py", line 22, in dispatch
+    return await self.dispatchToRoute(request)
+  File "../laravel/Illuminate/Routing/Router.py", line 25, in dispatchToRoute
+    return await self.runRoute(request, self.findRoute(request))
+  File "../laravel/Illuminate/Routing/Router.py", line 33, in runRoute
+    return await self.runRouteWithinStack(route, request)
+  File "../laravel/Illuminate/Routing/Router.py", line 43, in runRouteWithinStack
+    return await Pipeline(self.app).send(request).through(middleware).then(self.getRunClosure(route))
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 21, in then
+    return await runer(self.passable)
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 32, in inner
+    return await self.app.make(pipe).handle(passable, stack)
+  File "../app/Http/Middleware/M4.py", line 6, in handle
+    return await next(request)
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 25, in closure
+    return await destination(passable)
+  File "../laravel/Illuminate/Routing/Router.py", line 51, in closure
+    return await self.toResponse(request, await route.run(request))
+  File "../laravel/Illuminate/Routing/Route.py", line 30, in run
+    return await self.runController(request)
+  File "../laravel/Illuminate/Routing/Route.py", line 33, in runController
+    return await self.app.make('controllerDispatcher').dispatch(self, request)
+  File "../laravel/Illuminate/Routing/ControllerDispatcher.py", line 10, in dispatch
+    return await getattr(controller, action)(request)
+TypeError: object Response can't be used in 'await' expression
+
+
+【TIME】  2019-09-19 16:58:42
+Traceback (most recent call last):
+  File "index.py", line 36, in handler
+    return await self.kernel.handle(request);
+  File "../laravel/Illuminate/Foundation/Http/Kernel.py", line 33, in handle
+    return await self.sendRequestThroughRouter(request)
+  File "../laravel/Illuminate/Foundation/Http/Kernel.py", line 45, in sendRequestThroughRouter
+    return await Pipeline(self.app).send(request).through(self.Middleware).then(self.dispatchToRouter())
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 21, in then
+    return await runer(self.passable)
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 32, in inner
+    return await self.app.make(pipe).handle(passable, stack)
+  File "../app/Http/Middleware/M1.py", line 7, in handle
+    return await next(request)
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 32, in inner
+    return await self.app.make(pipe).handle(passable, stack)
+  File "../app/Http/Middleware/M2.py", line 4, in handle
+    return await next(request)
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 32, in inner
+    return await self.app.make(pipe).handle(passable, stack)
+  File "../app/Http/Middleware/M3.py", line 4, in handle
+    return await next(request)
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 25, in closure
+    return await destination(passable)
+  File "../laravel/Illuminate/Foundation/Http/Kernel.py", line 49, in closure
+    return await self.router.dispatch(request)
+  File "../laravel/Illuminate/Routing/Router.py", line 22, in dispatch
+    return await self.dispatchToRoute(request)
+  File "../laravel/Illuminate/Routing/Router.py", line 25, in dispatchToRoute
+    return await self.runRoute(request, self.findRoute(request))
+  File "../laravel/Illuminate/Routing/Router.py", line 33, in runRoute
+    return await self.runRouteWithinStack(route, request)
+  File "../laravel/Illuminate/Routing/Router.py", line 43, in runRouteWithinStack
+    return await Pipeline(self.app).send(request).through(middleware).then(self.getRunClosure(route))
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 21, in then
+    return await runer(self.passable)
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 32, in inner
+    return await self.app.make(pipe).handle(passable, stack)
+  File "../app/Http/Middleware/M4.py", line 6, in handle
+    return await next(request)
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 25, in closure
+    return await destination(passable)
+  File "../laravel/Illuminate/Routing/Router.py", line 51, in closure
+    return await self.toResponse(request, await route.run(request))
+  File "../laravel/Illuminate/Routing/Route.py", line 30, in run
+    return await self.runController(request)
+  File "../laravel/Illuminate/Routing/Route.py", line 33, in runController
+    return await self.app.make('controllerDispatcher').dispatch(self, request)
+  File "../laravel/Illuminate/Routing/ControllerDispatcher.py", line 10, in dispatch
+    return await getattr(controller, action)(request)
+TypeError: object Response can't be used in 'await' expression
+
+
+【TIME】  2019-09-19 16:58:43
+Traceback (most recent call last):
+  File "index.py", line 36, in handler
+    return await self.kernel.handle(request);
+  File "../laravel/Illuminate/Foundation/Http/Kernel.py", line 33, in handle
+    return await self.sendRequestThroughRouter(request)
+  File "../laravel/Illuminate/Foundation/Http/Kernel.py", line 45, in sendRequestThroughRouter
+    return await Pipeline(self.app).send(request).through(self.Middleware).then(self.dispatchToRouter())
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 21, in then
+    return await runer(self.passable)
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 32, in inner
+    return await self.app.make(pipe).handle(passable, stack)
+  File "../app/Http/Middleware/M1.py", line 7, in handle
+    return await next(request)
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 32, in inner
+    return await self.app.make(pipe).handle(passable, stack)
+  File "../app/Http/Middleware/M2.py", line 4, in handle
+    return await next(request)
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 32, in inner
+    return await self.app.make(pipe).handle(passable, stack)
+  File "../app/Http/Middleware/M3.py", line 4, in handle
+    return await next(request)
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 25, in closure
+    return await destination(passable)
+  File "../laravel/Illuminate/Foundation/Http/Kernel.py", line 49, in closure
+    return await self.router.dispatch(request)
+  File "../laravel/Illuminate/Routing/Router.py", line 22, in dispatch
+    return await self.dispatchToRoute(request)
+  File "../laravel/Illuminate/Routing/Router.py", line 25, in dispatchToRoute
+    return await self.runRoute(request, self.findRoute(request))
+  File "../laravel/Illuminate/Routing/Router.py", line 33, in runRoute
+    return await self.runRouteWithinStack(route, request)
+  File "../laravel/Illuminate/Routing/Router.py", line 43, in runRouteWithinStack
+    return await Pipeline(self.app).send(request).through(middleware).then(self.getRunClosure(route))
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 21, in then
+    return await runer(self.passable)
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 32, in inner
+    return await self.app.make(pipe).handle(passable, stack)
+  File "../app/Http/Middleware/M4.py", line 6, in handle
+    return await next(request)
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 25, in closure
+    return await destination(passable)
+  File "../laravel/Illuminate/Routing/Router.py", line 51, in closure
+    return await self.toResponse(request, await route.run(request))
+  File "../laravel/Illuminate/Routing/Route.py", line 30, in run
+    return await self.runController(request)
+  File "../laravel/Illuminate/Routing/Route.py", line 33, in runController
+    return await self.app.make('controllerDispatcher').dispatch(self, request)
+  File "../laravel/Illuminate/Routing/ControllerDispatcher.py", line 10, in dispatch
+    return await getattr(controller, action)(request)
+TypeError: object Response can't be used in 'await' expression
+
+
+【TIME】  2019-09-19 16:58:43
+Traceback (most recent call last):
+  File "index.py", line 36, in handler
+    return await self.kernel.handle(request);
+  File "../laravel/Illuminate/Foundation/Http/Kernel.py", line 33, in handle
+    return await self.sendRequestThroughRouter(request)
+  File "../laravel/Illuminate/Foundation/Http/Kernel.py", line 45, in sendRequestThroughRouter
+    return await Pipeline(self.app).send(request).through(self.Middleware).then(self.dispatchToRouter())
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 21, in then
+    return await runer(self.passable)
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 32, in inner
+    return await self.app.make(pipe).handle(passable, stack)
+  File "../app/Http/Middleware/M1.py", line 7, in handle
+    return await next(request)
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 32, in inner
+    return await self.app.make(pipe).handle(passable, stack)
+  File "../app/Http/Middleware/M2.py", line 4, in handle
+    return await next(request)
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 32, in inner
+    return await self.app.make(pipe).handle(passable, stack)
+  File "../app/Http/Middleware/M3.py", line 4, in handle
+    return await next(request)
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 25, in closure
+    return await destination(passable)
+  File "../laravel/Illuminate/Foundation/Http/Kernel.py", line 49, in closure
+    return await self.router.dispatch(request)
+  File "../laravel/Illuminate/Routing/Router.py", line 22, in dispatch
+    return await self.dispatchToRoute(request)
+  File "../laravel/Illuminate/Routing/Router.py", line 25, in dispatchToRoute
+    return await self.runRoute(request, self.findRoute(request))
+  File "../laravel/Illuminate/Routing/Router.py", line 33, in runRoute
+    return await self.runRouteWithinStack(route, request)
+  File "../laravel/Illuminate/Routing/Router.py", line 43, in runRouteWithinStack
+    return await Pipeline(self.app).send(request).through(middleware).then(self.getRunClosure(route))
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 21, in then
+    return await runer(self.passable)
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 32, in inner
+    return await self.app.make(pipe).handle(passable, stack)
+  File "../app/Http/Middleware/M4.py", line 6, in handle
+    return await next(request)
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 25, in closure
+    return await destination(passable)
+  File "../laravel/Illuminate/Routing/Router.py", line 51, in closure
+    return await self.toResponse(request, await route.run(request))
+  File "../laravel/Illuminate/Routing/Route.py", line 30, in run
+    return await self.runController(request)
+  File "../laravel/Illuminate/Routing/Route.py", line 33, in runController
+    return await self.app.make('controllerDispatcher').dispatch(self, request)
+  File "../laravel/Illuminate/Routing/ControllerDispatcher.py", line 10, in dispatch
+    return await getattr(controller, action)(request)
+TypeError: object Response can't be used in 'await' expression
+
+
+【TIME】  2019-09-19 16:58:43
+Traceback (most recent call last):
+  File "index.py", line 36, in handler
+    return await self.kernel.handle(request);
+  File "../laravel/Illuminate/Foundation/Http/Kernel.py", line 33, in handle
+    return await self.sendRequestThroughRouter(request)
+  File "../laravel/Illuminate/Foundation/Http/Kernel.py", line 45, in sendRequestThroughRouter
+    return await Pipeline(self.app).send(request).through(self.Middleware).then(self.dispatchToRouter())
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 21, in then
+    return await runer(self.passable)
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 32, in inner
+    return await self.app.make(pipe).handle(passable, stack)
+  File "../app/Http/Middleware/M1.py", line 7, in handle
+    return await next(request)
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 32, in inner
+    return await self.app.make(pipe).handle(passable, stack)
+  File "../app/Http/Middleware/M2.py", line 4, in handle
+    return await next(request)
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 32, in inner
+    return await self.app.make(pipe).handle(passable, stack)
+  File "../app/Http/Middleware/M3.py", line 4, in handle
+    return await next(request)
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 25, in closure
+    return await destination(passable)
+  File "../laravel/Illuminate/Foundation/Http/Kernel.py", line 49, in closure
+    return await self.router.dispatch(request)
+  File "../laravel/Illuminate/Routing/Router.py", line 22, in dispatch
+    return await self.dispatchToRoute(request)
+  File "../laravel/Illuminate/Routing/Router.py", line 25, in dispatchToRoute
+    return await self.runRoute(request, self.findRoute(request))
+  File "../laravel/Illuminate/Routing/Router.py", line 33, in runRoute
+    return await self.runRouteWithinStack(route, request)
+  File "../laravel/Illuminate/Routing/Router.py", line 43, in runRouteWithinStack
+    return await Pipeline(self.app).send(request).through(middleware).then(self.getRunClosure(route))
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 21, in then
+    return await runer(self.passable)
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 32, in inner
+    return await self.app.make(pipe).handle(passable, stack)
+  File "../app/Http/Middleware/M4.py", line 6, in handle
+    return await next(request)
+  File "../laravel/Illuminate/Pipeline/Pipeline.py", line 25, in closure
+    return await destination(passable)
+  File "../laravel/Illuminate/Routing/Router.py", line 51, in closure
+    return await self.toResponse(request, await route.run(request))
+  File "../laravel/Illuminate/Routing/Route.py", line 30, in run
+    return await self.runController(request)
+  File "../laravel/Illuminate/Routing/Route.py", line 33, in runController
+    return await self.app.make('controllerDispatcher').dispatch(self, request)
+  File "../laravel/Illuminate/Routing/ControllerDispatcher.py", line 10, in dispatch
+    return await getattr(controller, action)(request)
+TypeError: object Response can't be used in 'await' expression
+
+
+【TIME】  2019-09-19 17:33:20
+Traceback (most recent call last):
+  File "index.py", line 36, in handler
+    return await self.kernel.handle(request);
+  File "../laravel/Illuminate/Foundation/Http/Kernel.py", line 31, in handle
+    self._initCurrentApp(deepcopy(app()))
+  File "/usr/lib/python3.7/copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.7/copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.7/copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.7/copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 215, in _deepcopy_list
+    append(deepcopy(a, memo))
+  File "/usr/lib/python3.7/copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.7/copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 169, in deepcopy
+    rv = reductor(4)
+  File "/usr/lib/python3.7/socket.py", line 192, in __getstate__
+    raise TypeError("Cannot serialize socket object")
+TypeError: Cannot serialize socket object
+
+
+【TIME】  2019-09-19 17:36:44
+Traceback (most recent call last):
+  File "index.py", line 36, in handler
+    return await self.kernel.handle(request);
+  File "../laravel/Illuminate/Foundation/Http/Kernel.py", line 31, in handle
+    self._initCurrentApp(deepcopy(app()))
+  File "/usr/lib/python3.7/copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.7/copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.7/copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.7/copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 215, in _deepcopy_list
+    append(deepcopy(a, memo))
+  File "/usr/lib/python3.7/copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.7/copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 169, in deepcopy
+    rv = reductor(4)
+  File "/usr/lib/python3.7/socket.py", line 192, in __getstate__
+    raise TypeError("Cannot serialize socket object")
+TypeError: Cannot serialize socket object
+
+
+【TIME】  2019-09-19 17:38:07
+Traceback (most recent call last):
+  File "index.py", line 36, in handler
+    return await self.kernel.handle(request);
+  File "../laravel/Illuminate/Foundation/Http/Kernel.py", line 31, in handle
+    self._initCurrentApp(deepcopy(app()))
+  File "/usr/lib/python3.7/copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.7/copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.7/copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.7/copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 215, in _deepcopy_list
+    append(deepcopy(a, memo))
+  File "/usr/lib/python3.7/copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.7/copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 169, in deepcopy
+    rv = reductor(4)
+  File "/usr/lib/python3.7/socket.py", line 192, in __getstate__
+    raise TypeError("Cannot serialize socket object")
+TypeError: Cannot serialize socket object
+
+
+【TIME】  2019-09-19 17:50:50
+Traceback (most recent call last):
+  File "index.py", line 36, in handler
+    return await self.kernel.handle(request);
+  File "../laravel/Illuminate/Foundation/Http/Kernel.py", line 31, in handle
+    self._initCurrentApp(deepcopy(app()))
+  File "/usr/lib/python3.7/copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.7/copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.7/copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.7/copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 215, in _deepcopy_list
+    append(deepcopy(a, memo))
+  File "/usr/lib/python3.7/copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.7/copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 169, in deepcopy
+    rv = reductor(4)
+  File "/usr/lib/python3.7/socket.py", line 192, in __getstate__
+    raise TypeError("Cannot serialize socket object")
+TypeError: Cannot serialize socket object
+
+
+【TIME】  2019-09-19 18:27:14
+Traceback (most recent call last):
+  File "index.py", line 36, in handler
+    return await self.kernel.handle(request);
+  File "../laravel/Illuminate/Foundation/Http/Kernel.py", line 31, in handle
+    self._initCurrentApp(deepcopy(app()))
+  File "/usr/lib/python3.7/copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.7/copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.7/copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.7/copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 215, in _deepcopy_list
+    append(deepcopy(a, memo))
+  File "/usr/lib/python3.7/copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.7/copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 169, in deepcopy
+    rv = reductor(4)
+  File "/usr/lib/python3.7/socket.py", line 192, in __getstate__
+    raise TypeError("Cannot serialize socket object")
+TypeError: Cannot serialize socket object
+
+
+【TIME】  2019-09-19 18:28:07
+Traceback (most recent call last):
+  File "index.py", line 36, in handler
+    return await self.kernel.handle(request);
+  File "../laravel/Illuminate/Foundation/Http/Kernel.py", line 31, in handle
+    self._initCurrentApp(deepcopy(app()))
+  File "/usr/lib/python3.7/copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.7/copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.7/copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.7/copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 215, in _deepcopy_list
+    append(deepcopy(a, memo))
+  File "/usr/lib/python3.7/copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.7/copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 169, in deepcopy
+    rv = reductor(4)
+  File "/usr/lib/python3.7/socket.py", line 192, in __getstate__
+    raise TypeError("Cannot serialize socket object")
+TypeError: Cannot serialize socket object
+
+
+【TIME】  2019-09-19 18:28:55
+Traceback (most recent call last):
+  File "index.py", line 36, in handler
+    return await self.kernel.handle(request);
+  File "../laravel/Illuminate/Foundation/Http/Kernel.py", line 31, in handle
+    self._initCurrentApp(deepcopy(app()))
+  File "/usr/lib/python3.7/copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.7/copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.7/copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.7/copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 215, in _deepcopy_list
+    append(deepcopy(a, memo))
+  File "/usr/lib/python3.7/copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.7/copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 169, in deepcopy
+    rv = reductor(4)
+  File "/usr/lib/python3.7/socket.py", line 192, in __getstate__
+    raise TypeError("Cannot serialize socket object")
+TypeError: Cannot serialize socket object
+
+
+【TIME】  2019-09-19 18:28:57
+Traceback (most recent call last):
+  File "index.py", line 36, in handler
+    return await self.kernel.handle(request);
+  File "../laravel/Illuminate/Foundation/Http/Kernel.py", line 31, in handle
+    self._initCurrentApp(deepcopy(app()))
+  File "/usr/lib/python3.7/copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.7/copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.7/copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.7/copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 215, in _deepcopy_list
+    append(deepcopy(a, memo))
+  File "/usr/lib/python3.7/copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.7/copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 169, in deepcopy
+    rv = reductor(4)
+  File "/usr/lib/python3.7/socket.py", line 192, in __getstate__
+    raise TypeError("Cannot serialize socket object")
+TypeError: Cannot serialize socket object
+
+
+【TIME】  2019-09-19 18:33:08
+Traceback (most recent call last):
+  File "index.py", line 36, in handler
+    return await self.kernel.handle(request);
+  File "../laravel/Illuminate/Foundation/Http/Kernel.py", line 31, in handle
+    self._initCurrentApp(deepcopy(app()))
+  File "/usr/lib/python3.7/copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.7/copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.7/copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.7/copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 215, in _deepcopy_list
+    append(deepcopy(a, memo))
+  File "/usr/lib/python3.7/copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.7/copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.7/copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.7/copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib/python3.7/copy.py", line 169, in deepcopy
+    rv = reductor(4)
+  File "/usr/lib/python3.7/socket.py", line 192, in __getstate__
+    raise TypeError("Cannot serialize socket object")
+TypeError: Cannot serialize socket object
+
+
